@@ -6,13 +6,13 @@ public class SystemUser extends Person {
 	
 	private String password;
 	
-	private Librarian librarian;
+	private enum Role{Administrator, Librarian, Super;}
 	
-	private Administrator admin;
+	private Role role;
 	
-	SystemUser(String firstName, String lastName, String phoneNum, Address address){
+	SystemUser(String firstName, String lastName, String phoneNum, Address address,Role role){
 		super(firstName, lastName, phoneNum, address);
-	
+		this.role = role;
 	}
 	
 	public String getUserName() {
@@ -23,20 +23,9 @@ public class SystemUser extends Person {
 		return password;
 	}
 	
-	public Librarian getLibrarian() {
-		return librarian;
-	}
 
-	public void setLibrarian(Librarian librarian) {
-		this.librarian = librarian;
-	}
-
-	public Administrator getAdmin() {
-		return admin;
-	}
-
-	public void setAdmin(Administrator admin) {
-		this.admin = admin;
+	public Role getRole() {
+		return role;
 	}
 
 	public int login(String userName, String password) {
