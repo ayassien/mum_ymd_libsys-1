@@ -1,6 +1,6 @@
 package com.ymd.libsys;
 
-public class SystemUser extends Person {
+public class SystemUser {
 	
 	private String userName;
 	
@@ -10,8 +10,9 @@ public class SystemUser extends Person {
 	
 	private Role role;
 	
-	SystemUser(String firstName, String lastName, String phoneNum, Address address,Role role){
-		super(firstName, lastName, phoneNum, address);
+	SystemUser(String userName, String password,Role role){
+		this.userName = userName;
+		this.password = password;
 		this.role = role;
 	}
 	
