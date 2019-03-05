@@ -10,6 +10,11 @@ public class SystemUser extends Person {
 	
 	private Administrator admin;
 	
+	SystemUser(String firstName, String lastName, String phoneNum, Address address){
+		super(firstName, lastName, phoneNum, address);
+	
+	}
+	
 	public String getUserName() {
 		return userName;
 	}
